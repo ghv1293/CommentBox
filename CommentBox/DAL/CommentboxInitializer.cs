@@ -17,6 +17,10 @@ namespace CommentBox.DAL
             new Comment{Textbox="Second Comment",Timestamp=DateTime.Parse("2019-09-02")}
 
             };
+            var users = new List<User>
+            { new User{name="Harsha" } };
+
+            users.ForEach(s => context.Users.Add(s));
 
             comments.ForEach(s => context.Comments.Add(s));
             context.SaveChanges();
